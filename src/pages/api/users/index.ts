@@ -1,11 +1,11 @@
 import { NextApiRequest, NextApiResponse } from 'next';
-import { users } from '../../../data/users';
+import { getUsers, createUser } from '../../../lib/usersStore';
 import { User } from '../../../types';
 
-export default function handler(req: NextApiRequest, res: NextApiResponse) {
+export default async function handler(req: NextApiRequest, res: NextApiResponse) {
   if (req.method === 'GET') {
-    // Return list of users
-    return res.status(200).json(users);
+    const u = await getUsers();
+    return res.status(200).json(u.map((x) => ({ ...x, password: undefined })));
   }
 
   if (req.method === 'POST') {
@@ -15,16 +15,9 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
       return res.status(400).json({ message: 'name and email are required' });
     }
 
-    const newUser: User = {
-      id: Date.now().toString(),
-      name,
-      email,
-      password,
-    };
+    const newUser = await createUser({ name, email, password });
 
-    users.push(newUser);
-
-    return res.status(201).json(newUser);
+    return res.status(201).json({ ...newUser, password: undefined });
   }
 
   res.setHeader('Allow', ['GET', 'POST']);

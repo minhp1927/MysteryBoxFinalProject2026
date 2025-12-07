@@ -69,7 +69,8 @@ const UsersPage: React.FC = () => {
     setEditingId(u.id);
     setName(u.name);
     setEmail(u.email);
-    setPassword(u.password ?? '');
+    // never prefill password in form for security
+    setPassword('');
   };
 
   const handleDelete = async (id: string) => {
