@@ -19,6 +19,9 @@ const Header: React.FC = () => {
                         <Link href="/products">Sản phẩm</Link>
                     </li>
                     <li>
+                        <Link href="/users">Users</Link>
+                    </li>
+                    <li>
                         <Link href="/about">Về chúng tôi</Link>
                     </li>
                     <li>
