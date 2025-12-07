@@ -8,5 +8,11 @@
     "id": "2",
     "name": "Jane Doe",
     "email": "janedoe@example.com"
+  },
+  {
+    "id": "1765108568170",
+    "name": "minhp1123",
+    "email": "fhajdhf@gmail.com",
+    "password": "$2b$10$CdwU9W8DG/pVS8eMhyDAn.bG1JHpDLqAQmrwEPmeH1DZxFVhBMIVC"
   }
 ]
