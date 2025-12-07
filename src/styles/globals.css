@@ -1,8 +1,22 @@
+:root{
+    --bg-color-1: #f6f8fb;
+    --bg-color-2: #eef3f8;
+    --accent: #f0f6ff;
+}
+
 body {
     margin: 0;
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
     line-height: 1.6;
-    background-color: #f9f9f9;
+    /* Subtle two-tone gradient with a lightweight dotted SVG texture overlay */
+    background-color: var(--bg-color-1);
+    background-image: 
+        radial-gradient(rgba(255,255,255,0.6) 1px, transparent 1px),
+        linear-gradient(180deg, var(--bg-color-1) 0%, var(--bg-color-2) 100%);
+    background-size: 18px 18px, 100% 100%;
+    background-attachment: fixed;
+    /* So text remains readable on the subtle texture */
+    color: #111;
 }
 
 h1, h2, h3, h4, h5, h6 {
