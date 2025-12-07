@@ -69,8 +69,8 @@ a {
 }
 
 .hero {
-    /* Use hero image if available, otherwise show a soft gradient fallback */
-    background-image: url('../public/hero-image.jpg'), linear-gradient(180deg, rgba(0,0,0,0.05), rgba(0,0,0,0.02));
+    /* Use hero SVG from public/ as background; keep gradient fallback */
+    background-image: url('/hero-image.svg'), linear-gradient(180deg, rgba(0,0,0,0.05), rgba(0,0,0,0.02));
     background-repeat: no-repeat;
     background-position: center center;
     background-size: cover, cover;
@@ -80,6 +80,7 @@ a {
     justify-content: center;
     color: #fff;
     text-align: center;
+    position: relative;
 }
 
 .hero .overlay {
